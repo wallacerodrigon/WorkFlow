@@ -63,7 +63,7 @@ td {
 }
 
 
-nav#menus ol {
+nav#menus ol, ul {
 	list-style: none;
 	padding: 2px;
 	margin: 0px;
@@ -104,9 +104,9 @@ section#corpo header {
 
 }
 
-li:hover {
+/* li:hover {
 	background-color:#CCCCCC;
-}
+} */
 
 a:hover {
 	background-color:#0033CC;
@@ -136,4 +136,10 @@ a:hover {
 .classExibeArquivo{
 	width:470px; 
 	weight: bold;
+}
+
+#img_home {
+	margin-top: 30px;
+	margin-left:100px;
+	
 }

@@ -9,7 +9,7 @@ jQuery(document).ready(function(){
 	$('#abaFinanciadora').click(function(){ ativaAbaFinanciadoras(); });
     
     
-	$("#formCadastro").dialog({
+/*	$("#formCadastro").dialog({
     	autoOpen: false,
     	height: 600,
 		width: 550,
@@ -55,7 +55,7 @@ jQuery(document).ready(function(){
     	        		$(this).dialog('close');
 					}
     	}
-    });
+    });*/
 	
 	$("#formPesquisa").dialog({
     	autoOpen: false,
@@ -176,9 +176,9 @@ function abrirTelaCadastroProjeto(){
 	} else {
 		$('#idProjeto').val(0);		
 	}
-	$('#formCadastro').dialog('open');	
+/*	$('#formCadastro').dialog('open');	
     $('#formCadastro').dialog('option', 'title', 'Manter Projeto');	   
-}
+*/}
 
 function mostrarDadosParaEditar(codProjeto)
 {
@@ -369,7 +369,7 @@ function validarDataInicioFim(pDataInicio, pDataFim){
 	}
 	return true;
 	
-}7
+}
 
 function efetuarLogoff(){
 	$.ajax({

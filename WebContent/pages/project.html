@@ -20,71 +20,22 @@
 	<link rel="stylesheet" type="text/css" href="../jquery/tabs.css"/>
 
 	<!--jquery-->	
-    <script src="../jquery/jquery-1.4.2.min.js" type="text/javascript"></script>
+    <script src="../jquery/jquery.js" type="text/javascript"></script>
     <script src="../jquery/ui/jquery-ui-1.7.2.custom.js" type="text/javascript"></script>
-    <script src="../jquery/ui/ui.dialog.js" type="text/javascript"></script>
     <script src="../jquery/ui/i18n/ui.datepicker-pt-BR.js" type="text/javascript"></script>    
     <script src="../jquery/jquery.maskedinput-1.2.2.js" type="text/javascript"></script>
     <script src="../jquery/jquery.impromptu.2.7.js" type="text/javascript"></script>
-    <script src="../jquery/jquery/ui/ui.tabs.js" type="text/javascript"></script>
+    <script src="../jquery/jquery/ui/ui.tabs.js" type="text/javascript"></script>    
     <script src="../_js/project.js"></script>
-    <script src="../_js/activity.js"></script>    
-
-    
+     
 </head>
+
 <body>
-<div class="tela">
-<header>
-	<img src="../_img/logo.png"/>
-</header>
 
-<aside>
-	<nav id="menus">
-			<ol>
-				<li class='sub_menu'><a href="javascript:void(0)" onClick="location.href='project.html'">Projetos</a></li>
-				<li>
-					<ol>
-						<li class="item_sub_menu" id="incluir_projeto"><img src="../_img/novo.png" alt="Inclusão de Projetos" width="32" height="32" onClick="novoRegistro()"></li>
-						<li class="item_sub_menu" id="buscar_projeto"><img src="../_img/busca.png" alt="Busca por Projetos" width="32" height="32" onClick="buscar()"></li>
-						
-					</ol>
-				</li>
-				<li class='sub_menu' id="logoff"><a href="javascript:void(0)"  onClick="efetuarLogoff()">Logoff</a></li>							
- 			</ol>
-	</nav>
-</aside>
-	
-<section id="corpo">
-	<header>
-			<h1>Cadastro de Projetos</h1>
-	</header>
-	
-	<article>
-		<div id="conteudo">
-			<table style="width:100%">
-				<thead>
-					<tr>	
-						<th>Nome</th>
-						<th>Descri&ccedil;&atilde;o</th>
-						<th>Coordenador</th>
-						<th>In&iacute;cio</th>
-						<th>Fim</th>
-						<th>Editar</th>						
-						<th>Excluir</th>
-					</tr>
-				</thead>
-				<tbody id="corpo_conteudo">
-				</tbody>
-			</table>
-		</div>
-	</article>	
-	
-	
-</section>
-
-<div id="users-contain" class="ui-widget">
-	<div id="formCadastro" title="Manuten&ccedil;&atilde;o de Projetos">
+	<div id="formCadProjeto">
 		<form id="frmManter">
+		<fieldset>
+			<legend>Manuten&ccedil;&atilde;o de Projetos</legend>
 			<div class="rotulo">Nome</div>
 			<input type="text" id="txtNome" name="nome" maxlength="50" size="100">				
 			
@@ -129,100 +80,8 @@
 			<input type="hidden" name="acao" value="salvar"/>
 			<input type="hidden" name="idProjeto" id="idProjeto" value="0"/>
 		</form>
+		</fieldset>
 	</div>
-</div>	
-
-<div id="users-contain" class="ui-widget">
-	<div id="formPesquisa" title="Busca por Projetos">
-		<form id="frmPesquisar">
-			<div class="rotulo">Nome</div>
-			<input type="text" id="txtNomeFiltro" name="nome" maxlength="50" size="60">				
-		</form>
-	</div>
-</div>
-
-<div id="users-contain" class="ui-widget">
-	<div id="formAtividades" title="Atividades do Projeto">
-		<table style="width:100%">
-			<thead>
-				<tr>	
-					<th>Programa</th>
-					<th>Vers&atilde;o</th>
-					<th>Fun&ccedil;&atilde;o</th>
-					<th>In&iacute;cio</th>
-					<th>Fim</th>
-					<th colspan='3'>A&ccedil;&otilde;es</th>
-				</tr>
-			</thead>
-			<tbody id="atividades_projeto">
-			</tbody>
-		</table>
-		<input type="hidden" id="idProjetoAtual">				
-	</div>
-	
-</div>		
-
-<div id="users-contain" class="ui-widget">
-	<div id="formCadastroAtividade" title="Manuten&ccedil;&atilde;o de atividades">
-		<form id="frmManterAtividade">
-				<div  class="rotulo">Programa</div>
-				<input type=text id="txtPrograma" name="nomePrograma" maxlength="50" style="width:500px">
-				
-				<br>
-				<div class="rotulo">Vers&atilde;o</div>
-				<div class="rotulo">Fun&ccedil;&atilde;o</div>
-				<br>
-				
-				<input type="text" id="txtVersao" name="versaoPrograma" maxlength="50" size="22">
-				<input type="text" id="txtFuncao" name="funcao" maxlength="50" size="71">
-				<br>
-				
-				<div class="rotulo">Data/Hora in&iacute;cio</div>
-				<br>				
-				<input type="text" id="txtInicioAtividade" name="dataInicio" maxlength="50" size="20">
-				<input type="text" id="txtHoraInicioAtividade" name="horaInicio" maxlength="50" size="10">
-				<br>				
-
-				<div class="rotulo">Data/Hora fim</div>
-				<br>				
-				
-				<input type="text" id="txtFimAtividade" name="dataFim" maxlength="50" size="20">
-				<input type="text" id="txtHoraFimAtividade" name="horaFim" maxlength="50" size="10">
-				<br>
-				
-				<div class="rotulo">Linha de comando</div>
-				<textarea id="txtComando" name="linhaComando" rows="5" maxlength="100" style="width: 500px"></textarea>
-				<br>
-				
-				<div id="nomeArquivoSelecionado"></div>
-				<br>
-								
-				<input type="hidden" id="txtNomeArquivo" name="nomeArquivo"/>
-				<input type="hidden" name="acao" value="salvar"/>
-				<input type="hidden" name="idAtividade" id="idAtividade"/>
-				<input type="hidden" id="idProjetoDaAtividade" name="idProjetoDaAtividade"/>
-				
-		</form>
-		<iframe src="upload.html" id="frameUpload"></iframe>
-	</div>
-</div>				
-
-<div id="users-contain" class="ui-widget">
-	<div id="telaResultadoComando">
-		<textarea id="txtResultadoComando" style="width:450px; height: 380px" disabled></textarea>
-	</div>
-</div>
-
-<div id="users-contain" class="ui-widget">
-	<div id="divProcessando">
-		<img src="../_img/loading_50_50.gif" id="imgProcessando" style="margin-left: 200px"/>
-		<h1>Aguarde enquanto o comando est&aacute; sendo executado!!!</h1>
-	</div>
-</div>
-
-</div>
-
-
 
 </body>
 </html>
